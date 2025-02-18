@@ -27,6 +27,7 @@ require __DIR__.'/auth.php';
 
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DemoniteController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AttendanceController;
 
@@ -82,4 +83,11 @@ Route::middleware(['auth'])->group(function () {
     //     Route::get('/members/dashboard', [MemberController::class, 'index'])->name('members.dashboard');
 
     // });
+
+   Route::get('/Demo/adddemo', [DemoniteController::class, 'adddemo'])->name('/Demo/adddemo');
+
+   Route::post('/savedemo', [DemoniteController::class, 'savedemo'])->name('savedemo');
+
+   Route::get('/demonitain', [DemoniteController::class, 'demonitain'])->name('demonitain');
+
 });

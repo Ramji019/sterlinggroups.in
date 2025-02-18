@@ -30,14 +30,19 @@ alter table bill add bill_id varchar(10) DEFAULT NULL after id;
 alter table bill add utrno varchar(20) DEFAULT NULL after bill_id;
 alter table bill add name varchar(20) DEFAULT NULL after utrno;
 
-CREATE TABLE `web_register` (
+CREATE TABLE `demonite` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) DEFAULT NULL,
-  `phone` varchar(10) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
-  `api` varchar(10) DEFAULT NULL,
-  `domain` varchar(10) DEFAULT NULL,
-  `domain_name` varchar(50) DEFAULT NULL,
-  `website_name` varchar(50) DEFAULT NULL,
+  `rs_coin` decimal(10,2) DEFAULT 0,
   PRIMARY KEY (`id`)
 )  ENGINE=InnoDB;
+
+INSERT INTO `demonite` VALUES (1,500),(2,200),(3,100),(4,50),(5,20),(6,10),(7,5),(8,2),(9,1);
+
+CREATE TABLE `demo_payment` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `parent_id` int DEFAULT 0,
+  `service_id` int DEFAULT 0,
+  `count` decimal(10,2) DEFAULT 0,
+  `total` decimal(10,2) DEFAULT 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB;

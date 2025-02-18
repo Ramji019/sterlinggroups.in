@@ -103,6 +103,6 @@
 		<!-- Chart JS -->
 		<script src="{{ asset('../assetss/js/Chart.min.js') }}"></script>
 		<script src="{{ asset('../assetss/js/chart.js') }}"></script>
-        @stack('page_scripts')
+		@stack('page_scripts')
 	</body>
 </html>

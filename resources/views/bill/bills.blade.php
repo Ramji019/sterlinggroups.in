@@ -23,15 +23,15 @@
                     <a class="list-group-item" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile"
                         role="tab" aria-controls="v-pills-profile" aria-selected="false">Paid</a>&nbsp;
 
-                 @if ( Auth::user()->role_id == 1 )
-                    <a class="list-group-item" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-svn"
-                        role="tab" aria-controls="v-pills-svn" aria-selected="false">All</a>&nbsp;
-                @endif
+                    @if (Auth::user()->role_id == 1)
+                        <a class="list-group-item" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-svn"
+                            role="tab" aria-controls="v-pills-svn" aria-selected="false">All</a>&nbsp;
+                    @endif
 
                 </div>
             </div>
         </div>
-       
+
         <div class="card shadow-sm ctm-border-radius grow">
             <div class="card-body align-center">
                 <div class="tab-content" id="v-pills-tabContent">
@@ -41,9 +41,11 @@
                             <h4 class="card-title mb-0 d-inline-block">UnPaid</h4>
                             <div class="card shadow-sm grow ctm-border-radius">
                                 <div class="card-body align-center">
-                                        <li class="nav-item pl-3">
-                                            <a href="{{ url('/client/clients') }}" class="btn btn-theme button-1 text-white ctm-border-radius p-2 add-person ctm-btn-padding"><i class="fa fa-plus"></i> Add Bill</a>
-                                        </li>
+                                    <li class="nav-item pl-3">
+                                        <a href="{{ url('/client/clients') }}"
+                                            class="btn btn-theme button-1 text-white ctm-border-radius p-2 add-person ctm-btn-padding"><i
+                                                class="fa fa-plus"></i> Add Bill</a>
+                                    </li>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +112,7 @@
                                             <th>Amount</th>
                                             <th>Paid(or)Unpaid</th>
                                             @if (Auth::user()->role_id == 3)
-                                            <th>Action</th>
+                                                <th>Action</th>
                                             @endif
                                         </tr>
                                     </thead>
@@ -169,7 +171,7 @@
                                                 <td>{{ $b->service_details }}</td>
                                                 <td>{{ $b->amount }}</td>
                                                 <td class="text-success">{{ $b->paid_unpaid }}</td>
-                                                    <td class="text-danger">{{ $b->utrno }}</td>
+                                                <td class="text-danger">{{ $b->utrno }}</td>
                                                 @if (Auth::user()->role_id == 3)
                                                     <td>
                                                         @if ($b->paid_unpaid == 'unpaid')
